@@ -62,5 +62,11 @@ change names
 
 ## Next steps
 
+1. Make public demo with api, full MLops cycle.
+    Using:
+        Docker
+        FastAPI
+        Kafka
+        
 
 
