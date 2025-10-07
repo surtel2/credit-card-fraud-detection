@@ -1,36 +1,38 @@
 # Credit Card Fraud Detection - Random Forest & XGradient boosting
 
-Goal: To find and build best fraud detection model with highest score Private Score on the Kaggle competetion leaderboard.
-Data: Open data set from competition with a highly imbalanced target class.
-Key Results: Random Forest (0.701 Private Score Leaderboard, 27/71 Rank on LeaderBoard) and XGB (0.708 Private Score Leaderboard, 24/71 Rank on LeaderBoard)
-Date???
+**Goal**: To find and build best fraud detection model with highest score Private Score on the Kaggle competetion leaderboard.
+**Data**: Open data set from competition with a highly imbalanced target class.
+**Results**: Random Forest (0.701 Private Score Leaderboard, 27/71 Rank on LeaderBoard) and XGB (0.708 Private Score Leaderboard, 24/71 Rank on LeaderBoard)
+**Date**: 2025-09-28
 
 ## How to run
-??
+1. **Set up environment** for your project.
+2. **Download data**: from [Kaggle Competition](https://www.kaggle.com/competitions/credit-card-fraud-prediction/data) and place it in './data/' folder of your project/environment.
+3. **Open notebooks** and run sequentially:
+    01_data_exploring.ipynb
+    02_random_forest_undersample.ipynb
+    03_xgb_full.ipynb
 
 ## Data & licence
-Open data set from competition 
-@misc{credit-card-fraud-prediction,
-    author = {Prayash Dash and VectorNd},
-    title = {Credit Card Fraud Detection},
-    year = {2024},
-    howpublished = {\url{https://kaggle.com/competitions/credit-card-fraud-prediction}},
-    note = {Kaggle}
-}
+Dataset: [Kaggle Credit Card Prediction](https://www.kaggle.com/competitions/credit-card-fraud-prediction/overview) by Prayash Dash and VectorNd (2024).
+Licence: Use governed by Kaggle competition rules (non-commercial / educational).
+This repo is for **educational and portfolio purposes only**.
 
 ## Reproducibility
 Notebooks has been already setuped to getting the same results with fixed SEED (random_state) parameter and fixed stratified split and undersampling.
 
 ## Method
-1. Data completeness research: making sure that there is no Null values, all variables are scaled in same magnitude
-2. Modeling (2 Branches):
-    1. Random Forest (undersample 50%/50%)
-    2. XG Boosting (full data set)
-
-Both branches used all the features.
-Preprocessing:
+1. Data validation: verivied no nulls, all features on comparable scales
+2. Models:
+    1. Random Forest (RF) — undersample 50%/50%
+    2. XGBoost (XGB) — full data set
+    Both models used all the features.
+3. Preprocessing:
     Undersampling was made in raw code.
-    Colummn scaling and modeling was made in a pipeline.
+    Scaling and modeling combined in a pipeline.
+4. Reproductibility:
+    Fixed SEED=42 across samplers, splitters, and models.
+    Stratified train/test split.
 
 ## Results
 1. Random Forest
