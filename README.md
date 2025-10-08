@@ -35,39 +35,31 @@ Notebooks has been already setuped to getting the same results with fixed SEED (
     Stratified train/test split.
 
 ## Results
+### Random Forest
 | Metric               | Value     | Notes                            |
 | -------------------- | --------- | -------------------------------- |
 | ROC-AUC              | 0.745     | 50/50 balanced dataset           |
 | PR-AUC               | 0.751     | Evaluated on balanced validation |
 | Kaggle Private Score | **0.701** | Rank 27/71, 2025-09-28           |
 
+### XGBoost
+| Metric               | Value     | Notes                            |
+| -------------------- | --------- | -------------------------------- |
+| ROC-AUC              | 0.816     | Full data, realistic imbalance   |
+| PR-AUC               | 0.031     | Fraud rate ≈ 0.00179 → Lift ≈ ×17|
+| Kaggle Private Score | **0.701** | Rank 24/71, 2025-09-28           |
 
-1. Random Forest
-    ROC AUC: 0.745..
-    PR AUC: 0.751.. (50%/50% balanced dataset)
-    Kaggle Competition:
-        Private score: 0.701..
-        Position in LeaderBoard: 27/71
-        Date: 2025-Sept-28
-2. XG Boosting
-    ROC AUC: 0.816..
-    PR AUC: 0.031.. (full dataset with 0.00179 share of the target class, thus 0.031 / 0.00179 ≈ 17.3)
-    Kaggle Competition:
-        Private score: 0.708..
-        Position in LeaderBoard: 24/71
-        Date: 2025-Sept-28
 
 ## Repo map
-change names
-
+```
 ├─ data/                  # train.csv, test.csv, sample_submission.csv (not committed)
 ├─ notebooks/
 │  ├─ 01_data_exploring.ipynb             # Exploring, checking: null values, target class balance, feature scale.
 │  ├─ 02_random_forest_undersample.ipynb  # 50/50 undersample → RF → PR-curve threshold → submission
 │  └─ 03_xgb_full.ipynb                   # full data (no undersample) → XGB (aucpr, scale_pos_weight) → submission
 └─ README.md  ← you are here
-
-## Model card-lite??
+```
+## Model Card (summary)
 
 ## Next steps
 
