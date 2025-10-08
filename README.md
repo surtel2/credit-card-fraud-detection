@@ -35,6 +35,13 @@ Notebooks has been already setuped to getting the same results with fixed SEED (
     Stratified train/test split.
 
 ## Results
+| Metric               | Value     | Notes                            |
+| -------------------- | --------- | -------------------------------- |
+| ROC-AUC              | 0.745     | 50/50 balanced dataset           |
+| PR-AUC               | 0.751     | Evaluated on balanced validation |
+| Kaggle Private Score | **0.701** | Rank 27/71, 2025-09-28           |
+
+
 1. Random Forest
     ROC AUC: 0.745..
     PR AUC: 0.751.. (50%/50% balanced dataset)
