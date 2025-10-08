@@ -47,27 +47,34 @@ Notebooks has been already setuped to getting the same results with fixed SEED (
 | -------------------- | --------- | -------------------------------- |
 | ROC-AUC              | 0.816     | Full data, realistic imbalance   |
 | PR-AUC               | 0.031     | Fraud rate ≈ 0.00179 → Lift ≈ ×17|
-| Kaggle Private Score | **0.701** | Rank 24/71, 2025-09-28           |
+| Kaggle Private Score | **0.708** | Rank 24/71, 2025-09-28           |
 
 
 ## Repo map
 ```
-├─ data/                  # train.csv, test.csv, sample_submission.csv (not committed)
+├─ data/                  # train.csv, test.csv, sample_submission.csv
 ├─ notebooks/
-│  ├─ 01_data_exploring.ipynb             # Exploring, checking: null values, target class balance, feature scale.
-│  ├─ 02_random_forest_undersample.ipynb  # 50/50 undersample → RF → PR-curve threshold → submission
-│  └─ 03_xgb_full.ipynb                   # full data (no undersample) → XGB (aucpr, scale_pos_weight) → submission
+│  ├─ 01_data_exploring.ipynb             # Exploring: null values, target class balance, feature scale.
+│  ├─ 02_random_forest_undersample.ipynb  # 50/50 undersample → RF → submission
+│  └─ 03_xgb_full.ipynb                   # full data (no undersample) → XGB → submission
 └─ README.md  ← you are here
 ```
 ## Model Card (summary)
++ Task: Binary fraud classification.
++ Training: Random Forest (undersampled) and XGBoost (full data)
++ Evaluation metrics: ROC-AUC, PR-AUC, f1
++ Limitation: Trained on anonymized competition data; not production-ready; no real-world interpretability guarantees.
 
 ## Next steps
 
-1. Make public demo with api, full MLops cycle.
+Make public demo with api, full MLops cycle.
     Using:
         Docker
         FastAPI
-        Kafka
-        
+        Kafka     
 
-
+1. Retrain on an open CC0 or ULB dataset for public MLOps deployment.
+2. Add MLflow tracking and logging
+3. Package the pipeline into a Dockerized FastApi endpoint.
+4. Implement automatic threshold tuning (Precision@Recall or cost-based).
+5. Add SHAP feature-importance azalysis.
