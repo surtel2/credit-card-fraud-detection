@@ -1,9 +1,9 @@
 # Credit Card Fraud Detection — Random Forest & XGBoost
 
-**Goal**: To build the best fraud detection model achieving the highest Private Score on the Kaggle competition leaderboard.
-**Data**: Open data set from the Kaggle competition with a highly imbalanced target class.
-**Results**: Random Forest (0.701 Private Score Leaderboard, 27/71 Rank on LeaderBoard) and XGB (0.708 Private Score Leaderboard, 24/71 Rank on LeaderBoard)
-**Date**: 2025-09-28
+**Goal**: To build the best fraud detection model achieving the highest Private Score on the Kaggle competition leaderboard.  
+**Data**: Open data set from the Kaggle competition with a highly imbalanced target class.  
+**Results**: Random Forest (0.701 Private Score Leaderboard, 27/71 Rank on LeaderBoard) and XGB (0.708 Private Score Leaderboard, 24/71 Rank on LeaderBoard)  
+**Date**: 2025-09-28  
 
 ## How to run
 1. **Set up environment** for your project.
