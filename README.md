@@ -1,7 +1,7 @@
-# Credit Card Fraud Detection - Random Forest & XGradient boosting
+# Credit Card Fraud Detection — Random Forest & XGBoost
 
-**Goal**: To find and build best fraud detection model with highest score Private Score on the Kaggle competetion leaderboard.
-**Data**: Open data set from competition with a highly imbalanced target class.
+**Goal**: To build the best fraud detection model achieving the highest Private Score on the Kaggle competition leaderboard.
+**Data**: Open data set from the Kaggle competition with a highly imbalanced target class.
 **Results**: Random Forest (0.701 Private Score Leaderboard, 27/71 Rank on LeaderBoard) and XGB (0.708 Private Score Leaderboard, 24/71 Rank on LeaderBoard)
 **Date**: 2025-09-28
 
@@ -13,24 +13,24 @@
     02_random_forest_undersample.ipynb
     03_xgb_full.ipynb
 
-## Data & licence
+## Data & license
 Dataset: [Kaggle Credit Card Prediction](https://www.kaggle.com/competitions/credit-card-fraud-prediction/overview) by Prayash Dash and VectorNd (2024).
-Licence: Use governed by Kaggle competition rules (non-commercial / educational).
+License: Use governed the competition rules (non-commercial / educational).
 This repo is for **educational and portfolio purposes only**.
 
 ## Reproducibility
-Notebooks has been already setuped to getting the same results with fixed SEED (random_state) parameter and fixed stratified split and undersampling.
+Notebooks are already set up to reproduce the same results with fixed SEEDs (random_state=42), fixed stratified split, and undersampling.
 
 ## Method
-1. Data validation: verivied no nulls, all features on comparable scales
+1. Data validation: verified that there are no nulls and all features are on comparable scales.
 2. Models:
     1. Random Forest (RF) — undersample 50%/50%
     2. XGBoost (XGB) — full data set
-    Both models used all the features.
+Both models used all the features.
 3. Preprocessing:
     Undersampling was made in raw code.
     Scaling and modeling combined in a pipeline.
-4. Reproductibility:
+4. Reproducibility:
     Fixed SEED=42 across samplers, splitters, and models.
     Stratified train/test split.
 
@@ -54,27 +54,27 @@ Notebooks has been already setuped to getting the same results with fixed SEED (
 ```
 ├─ data/                  # train.csv, test.csv, sample_submission.csv
 ├─ notebooks/
-│  ├─ 01_data_exploring.ipynb             # Exploring: null values, target class balance, feature scale.
+│  ├─ 01_data_exploring.ipynb             # Exploring: null values, target class balance, feature scaling.
 │  ├─ 02_random_forest_undersample.ipynb  # 50/50 undersample → RF → submission
-│  └─ 03_xgb_full.ipynb                   # full data (no undersample) → XGB → submission
+│  └─ 03_xgb_full.ipynb                   # full data (no undersampling) → XGB → submission
 └─ README.md  ← you are here
 ```
 ## Model Card (summary)
 + Task: Binary fraud classification.
 + Training: Random Forest (undersampled) and XGBoost (full data)
 + Evaluation metrics: ROC-AUC, PR-AUC, f1
-+ Limitation: Trained on anonymized competition data; not production-ready; no real-world interpretability guarantees.
++ Limitations: Trained on anonymized competition data; not production-ready; no real-world interpretability guarantees.
 
 ## Next steps
 
-Make public demo with api, full MLops cycle.
-    Using:
-        Docker
-        FastAPI
-        Kafka     
+**Goal:** Build a public demo API and a full MLops pipeline using:
+- Docker
+- FastAPI
+- Kafka     
 
+**Planned improvements:**
 1. Retrain on an open CC0 or ULB dataset for public MLOps deployment.
 2. Add MLflow tracking and logging
 3. Package the pipeline into a Dockerized FastApi endpoint.
 4. Implement automatic threshold tuning (Precision@Recall or cost-based).
-5. Add SHAP feature-importance azalysis.
+5. Add SHAP feature-importance analysis.
