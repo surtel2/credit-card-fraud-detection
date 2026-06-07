@@ -65,16 +65,3 @@ Both models used all the features.
 + Evaluation metrics: ROC-AUC, PR-AUC, f1
 + Limitations: Trained on anonymized competition data; not production-ready; no real-world interpretability guarantees.
 
-## Next steps
-
-**Goal:** Build a public demo API and a full MLops pipeline using:
-- Docker
-- FastAPI
-- Kafka     
-
-**Planned improvements:**
-1. Retrain on an open CC0 or ULB dataset for public MLOps deployment.
-2. Add MLflow tracking and logging
-3. Package the pipeline into a Dockerized FastApi endpoint.
-4. Implement automatic threshold tuning (Precision@Recall or cost-based).
-5. Add SHAP feature-importance analysis.
