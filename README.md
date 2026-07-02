@@ -63,5 +63,5 @@ Both models used all the features.
 + Task: Binary fraud classification.
 + Training: Random Forest (undersampled) and XGBoost (full data)
 + Evaluation metrics: ROC-AUC, PR-AUC, f1
-+ Limitations: Trained on anonymized competition data; not production-ready; no real-world interpretability guarantees.
++ Limitations: Trained on anonymized competition data.
 
